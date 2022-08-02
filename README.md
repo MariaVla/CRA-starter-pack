@@ -1,6 +1,22 @@
-# Getting Started with Create React App
+# Homebanking Front
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Dependencies
+
+- nvm -v → 0.39.1
+
+- node -v → v18.7.0
+
+- npm -v → 8.15.1
+
+- yarn -v → 1.22.17
+
+## Setup
+
+1. Clone repository.
+2. `$ yarn install`
+3. `$ yarn start`
+
+---
 
 ## Available Scripts
 
