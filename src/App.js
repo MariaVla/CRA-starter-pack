@@ -6,6 +6,7 @@ import { NewUser } from "./pages/NewUser";
 
 import Users from "./pages/Users";
 import NotFound from "./pages/NotFound";
+import UserLayout from "./UserLayout";
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/login" element={<Login />} />
 
-        <Route path="/users">
+        <Route path="/users" element={<UserLayout />}>
           <Route index element={<Users />} />
           <Route path=":id" element={<User />} />
           <Route path="new" element={<NewUser />} />
