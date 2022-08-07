@@ -18,15 +18,17 @@ const fetchFriends = async () => {
 
 // Example using React-Query
 export default function Friends() {
-  // Queries (["a_key"], func that returns a promise)
+  // Queries (["key"], func that returns a promise)
   const {
     isLoading,
     data: friends,
     isError,
     error,
+    refetch,
+    isFetching,
   } = useQuery(['friends'], fetchFriends, { staleTime: 30000 });
 
-  if (isLoading) {
+  if (isLoading || isFetching) {
     return <h2>Loading...</h2>;
   }
 
@@ -37,6 +39,7 @@ export default function Friends() {
   return (
     <>
       <h1>Friends:</h1>
+      <button onClick={refetch}>Fetch friends</button>
       <ul>
         {friends?.map((friend) => (
           <li key={friend.id}>
