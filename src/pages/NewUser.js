@@ -1,3 +1,7 @@
 export function NewUser() {
-  return <h1>New user</h1>;
+  return (
+    <div className="container">
+      <h1>New User</h1>
+    </div>
+  );
 }

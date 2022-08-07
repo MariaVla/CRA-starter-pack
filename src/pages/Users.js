@@ -32,7 +32,7 @@ export default function Users() {
   }
 
   return (
-    <>
+    <div className="container">
       <h1>Users:</h1>
       <button onClick={refetch}>Fetch users</button>
 
@@ -45,6 +45,6 @@ export default function Users() {
           </div>
         ))}
       </ul>
-    </>
+    </div>
   );
 }

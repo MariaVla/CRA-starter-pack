@@ -1,0 +1,18 @@
+nav {
+  background-color: var(--secondary-color);
+  height: 4rem;
+  box-shadow: 4px 4px 4px var(--shadow-color);
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+li {
+  border-bottom: 1px solid var(--primary-color);
+}

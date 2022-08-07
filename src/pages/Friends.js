@@ -30,7 +30,7 @@ export default function Friends() {
   }
 
   return (
-    <>
+    <div className="container">
       <h1>Friends list:</h1>
       <ul>
         {users?.map((user) => (
@@ -41,6 +41,6 @@ export default function Friends() {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 }

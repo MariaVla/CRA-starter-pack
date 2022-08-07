@@ -1,39 +1,24 @@
-import { Routes, Route, Link } from 'react-router-dom';
-import { Home } from './pages/Home';
-import Login from './pages/Login';
-import NotFound from './pages/NotFound';
-import Firends from './pages/Friends';
-import UserRoutes from './UserRoutes';
+import { Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
-// Create a client
+import { Home } from './pages/Home';
+import Login from './pages/Login';
+import NotFound from './pages/NotFound';
+import Friends from './pages/Friends';
+import UserRoutes from './UserRoutes';
+import Navbar from './components/navbar/Navbar';
+
 const queryClient = new QueryClient();
 
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-          <li>
-            <Link to="/users">Users</Link>
-          </li>
-          <li>
-            <Link to="/friends">Friends</Link>
-          </li>
-        </ul>
-      </nav>
-
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/login" element={<Login />} />
-        <Route path="/friends" element={<Firends />} />
+        <Route path="/friends" element={<Friends />} />
 
         <Route path="/users/*" element={<UserRoutes />} />
 

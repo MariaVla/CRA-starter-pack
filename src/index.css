@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 :root {
   --white: #fff;
@@ -8,14 +8,21 @@
   --primary-color-light: #7373f9;
   --secondary-color: #f0f8ff;
   --shadow-color: #ddd;
-  font-family: "Poppins", sans-serif;
-  font-size: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
 }
 
 .container {
@@ -85,6 +92,7 @@
 
 .btn:hover {
   background-color: var(--primary-color-light);
+  cursor: pointer;
 }
 
 .login-btn {

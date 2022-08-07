@@ -5,7 +5,13 @@ export function User() {
   const { id } = useParams();
   // const { helloTest } = useOutletContext();
 
-  const { isLoading, data: user, isError, error, isFetching } = useUserData(id);
+  const {
+    isLoading,
+    data: user,
+    isError,
+    error,
+    /*isFetching*/
+  } = useUserData(id);
 
   if (isLoading) {
     return <h2>Loading...</h2>;
@@ -16,11 +22,11 @@ export function User() {
   }
 
   return (
-    <>
+    <div className="container">
       <h1>
         User: {user?.name} - {user?.alterEgo}
       </h1>
       {/* <p>{helloTest}</p> */}
-    </>
+    </div>
   );
 }
