@@ -14,25 +14,26 @@
       "id": 3,
       "name": "Wonder Woman",
       "alterEgo": "Princess Diana"
-    },
-    {
-      "id": 4,
-      "name": "Flash",
-      "alterEgo": "Barry Allen"
     }
+    // ,
+    // {
+    //   "id": 4,
+    //   "name": "Flash",
+    //   "alterEgo": "Barry Allen"
+    // }
   ],
   "friends": [
     {
       "id": 1,
-      "name": "Chandler Bing"
+      "name": "Serena Williams"
     },
     {
       "id": 2,
-      "name": "Joey Tribbiani"
+      "name": "Maria Sharapova"
     },
     {
       "id": 3,
-      "name": "Rachel Green"
+      "name": "Naomi Osaka"
     },
     {
       "id": 4,
@@ -41,52 +42,6 @@
     {
       "id": 5,
       "name": "Rafael Nadal"
-    }
-  ],
-  "users": [
-    {
-      "id": "vishwas@example.com",
-      "channelId": "codevolution"
-    }
-  ],
-  "channels": [
-    {
-      "id": "codevolution",
-      "courses": ["react", "vue", "angular"]
-    }
-  ],
-  "colors": [
-    {
-      "id": 1,
-      "label": "red"
-    },
-    {
-      "id": 2,
-      "label": "blue"
-    },
-    {
-      "id": 3,
-      "label": "green"
-    },
-    {
-      "id": 4,
-      "label": "yellow"
-    },
-    {
-      "id": 5,
-      "label": "black"
-    },
-    {
-      "id": 6,
-      "label": "white"
-    },
-    {
-      "id": 7,
-      "label": "orange"
-    },
-    {
-      "id": 8,
-      "label": "purple"
     }
   ]
 }
