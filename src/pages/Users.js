@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function Users() {
   const [users, setUsers] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     console.log("useEffect");
@@ -11,10 +12,15 @@ export default function Users() {
         .then((data) => {
           console.log("data", data);
           setUsers(data);
+          setIsLoading(false);
         });
     }
     fetchData();
   }, []);
+
+  if (isLoading) {
+    return <h1>Is loading...</h1>;
+  }
 
   return (
     <>
