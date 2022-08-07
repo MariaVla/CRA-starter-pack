@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useUsersData } from '../hooks/useUsersData';
 
 // Example using React-Query
@@ -37,11 +38,11 @@ export default function Users() {
 
       <ul>
         {users?.map((user) => (
-          <li key={user.id}>
-            <a href={user.website} target="_blank" rel="noreferrer">
-              {user.name}
-            </a>
-          </li>
+          <div key={user.id}>
+            <Link to={`/users/${user.id}`}>
+              {user.id}-{user.name}
+            </Link>
+          </div>
         ))}
       </ul>
     </>
