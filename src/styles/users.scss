@@ -1,0 +1,25 @@
+.fetch-btn {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.container-users {
+  width: 870%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-users {
+  flex-direction: column;
+  align-items: flex-start;
+
+  div {
+    margin-top: 0.5rem;
+
+    a {
+      padding: 0.275rem;
+    }
+  }
+}

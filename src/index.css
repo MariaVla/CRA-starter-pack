@@ -90,6 +90,13 @@ li {
   border-radius: 5px;
 }
 
+.btn-xs {
+  width: 10%;
+  height: 2.5rem;
+  border: 1px solid var(--light-border);
+  border-radius: 5px;
+}
+
 .btn:hover {
   background-color: var(--primary-color-light);
   cursor: pointer;

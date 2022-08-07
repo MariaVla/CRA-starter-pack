@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useUsersData } from '../hooks/useUsersData';
+import '../styles/users.scss';
 
 // Example using React-Query
 export default function Users() {
@@ -33,18 +34,21 @@ export default function Users() {
 
   return (
     <div className="container">
-      <h1>Users:</h1>
-      <button onClick={refetch}>Fetch users</button>
+      <div className="container-users">
+        <button className="btn btn-xs fetch-btn" onClick={refetch}>
+          Fetch more users - React Query
+        </button>
 
-      <ul>
-        {users?.map((user) => (
-          <div key={user.id}>
-            <Link to={`/users/${user.id}`}>
-              {user.id}-{user.name}
-            </Link>
-          </div>
-        ))}
-      </ul>
+        <ul className="list-users">
+          {users?.map((user) => (
+            <div key={user.id}>
+              <Link to={`/users/${user.id}`}>
+                {user.id}-{user.name}
+              </Link>
+            </div>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
