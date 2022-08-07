@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+// Example normal data fetching in React
 export default function Users() {
   const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -22,7 +23,7 @@ export default function Users() {
 
   return (
     <>
-      <h1>User list</h1>
+      <h1>User list:</h1>
       <ul>
         {users &&
           users.map((user) => (
