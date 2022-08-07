@@ -24,7 +24,7 @@ export default function Friends() {
     data: friends,
     isError,
     error,
-  } = useQuery(['friends'], fetchFriends);
+  } = useQuery(['friends'], fetchFriends, { staleTime: 30000 });
 
   if (isLoading) {
     return <h2>Loading...</h2>;
