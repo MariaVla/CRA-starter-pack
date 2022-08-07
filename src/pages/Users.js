@@ -4,6 +4,7 @@ export default function Users() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
+    console.log("useEffect");
     async function fetchData() {
       await fetch("https://jsonplaceholder.typicode.com/users")
         .then((response) => response.json())

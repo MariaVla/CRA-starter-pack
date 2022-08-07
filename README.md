@@ -16,7 +16,9 @@
 2. `$ yarn install`
 3. `$ yarn start`
 
----
+## To run JSON server (our mock database)
+
+`$ yarn serve-json`
 
 ## Available Scripts
 
