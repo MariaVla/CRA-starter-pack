@@ -23,7 +23,7 @@ export default function Users() {
     isFetching,
   } = useUsersData(onSuccess, onError);
 
-  if (isLoading || isFetching) {
+  if (isLoading) {
     return <h2>Loading...</h2>;
   }
 
