@@ -1,10 +1,11 @@
-import { Routes, Route, Link } from "react-router-dom";
-import { Home } from "./pages/Home";
-import Login from "./pages/Login";
-import NotFound from "./pages/NotFound";
-import Firends from "./pages/Friends";
-import UserRoutes from "./UserRoutes";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Routes, Route, Link } from 'react-router-dom';
+import { Home } from './pages/Home';
+import Login from './pages/Login';
+import NotFound from './pages/NotFound';
+import Firends from './pages/Friends';
+import UserRoutes from './UserRoutes';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 // Create a client
 const queryClient = new QueryClient();
@@ -38,6 +39,7 @@ function App() {
 
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }
