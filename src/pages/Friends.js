@@ -1,45 +1,42 @@
-import { useFriendsData } from '../hooks/useFriendsData';
+import { useEffect, useState } from 'react';
 
-// Example using React-Query
+// Example normal data fetching in React
 export default function Friends() {
-  const onSuccess = (data) => {
-    // Perform side effect after data fetching
-    console.log('onSuccess:', { data });
-  };
+  const [users, setUsers] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState('');
 
-  const onError = (error) => {
-    // Perform side effect after encountering error
-    console.log('onError:', { error });
-  };
+  useEffect(() => {
+    fetch('http://localhost:4000/friends')
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error('Something went wrong');
+      })
+      .then((data) => {
+        setUsers(data);
+        setIsLoading(false);
+      })
+      .catch((error) => setError(error.message));
+  }, []);
 
-  // Queries (["key"], func that returns a promise)
-  const {
-    isLoading,
-    data: friends,
-    isError,
-    error,
-    refetch,
-    isFetching,
-  } = useFriendsData(onSuccess, onError);
-
-  if (isLoading || isFetching) {
+  if (isLoading) {
     return <h2>Loading...</h2>;
   }
 
-  if (isError) {
-    return <h2>{error.message}</h2>;
+  if (error) {
+    return <h2>{error}</h2>;
   }
 
   return (
     <>
-      <h1>Friends:</h1>
-      <button onClick={refetch}>Fetch friends</button>
-
+      <h1>Friends list:</h1>
       <ul>
-        {friends?.map((friend) => (
-          <li key={friend.id}>
-            <a href={friend.website} target="_blank" rel="noreferrer">
-              {friend.name}
+        {users?.map((user) => (
+          <li key={user.id}>
+            <a href={user.website} target="_blank" rel="noreferrer">
+              {user.name}
             </a>
           </li>
         ))}

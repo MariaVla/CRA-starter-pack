@@ -1,37 +1,40 @@
-import { useEffect, useState } from 'react';
+import { useUsersData } from '../hooks/useUsersData';
 
-// Example normal data fetching in React
+// Example using React-Query
 export default function Users() {
-  const [users, setUsers] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState('');
+  const onSuccess = (data) => {
+    // Perform side effect after data fetching
+    console.log('onSuccess:', { data });
+  };
 
-  useEffect(() => {
-    fetch('http://localhost:4000/superheroes')
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw new Error('Something went wrong');
-      })
-      .then((data) => {
-        setUsers(data);
-        setIsLoading(false);
-      })
-      .catch((error) => setError(error.message));
-  }, []);
+  const onError = (error) => {
+    // Perform side effect after encountering error
+    console.log('onError:', { error });
+  };
 
-  if (isLoading) {
+  // Queries (["key"], func that returns a promise)
+  const {
+    isLoading,
+    data: users,
+    isError,
+    error,
+    refetch,
+    isFetching,
+  } = useUsersData(onSuccess, onError);
+
+  if (isLoading || isFetching) {
     return <h2>Loading...</h2>;
   }
 
-  if (error) {
-    return <h2>{error}</h2>;
+  if (isError) {
+    return <h2>{error.message}</h2>;
   }
 
   return (
     <>
-      <h1>User list:</h1>
+      <h1>Users:</h1>
+      <button onClick={refetch}>Fetch users</button>
+
       <ul>
         {users?.map((user) => (
           <li key={user.id}>
