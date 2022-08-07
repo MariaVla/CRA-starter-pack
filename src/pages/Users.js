@@ -17,7 +17,7 @@ export default function Users() {
   }, []);
 
   if (isLoading) {
-    return <h1>Is loading...</h1>;
+    return <h2>Loading...</h2>;
   }
 
   return (
