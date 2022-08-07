@@ -31,16 +31,18 @@ export default function Friends() {
 
   return (
     <div className="container">
-      <h1>Friends list:</h1>
-      <ul>
-        {users?.map((user) => (
-          <li key={user.id}>
-            <a href={user.website} target="_blank" rel="noreferrer">
-              {user.name}
-            </a>
-          </li>
-        ))}
-      </ul>
+      <div className="container-users">
+        <h1>Friends list (normal fetching in React)</h1>
+        <ul className="list-users">
+          {users?.map((user) => (
+            <li key={user.id}>
+              <a href={user.website} target="_blank" rel="noreferrer">
+                {user.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

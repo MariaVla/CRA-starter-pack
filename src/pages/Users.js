@@ -35,10 +35,6 @@ export default function Users() {
   return (
     <div className="container">
       <div className="container-users">
-        <button className="btn btn-xs fetch-btn" onClick={refetch}>
-          Fetch more users - React Query
-        </button>
-
         <ul className="list-users">
           {users?.map((user) => (
             <div key={user.id}>
@@ -48,6 +44,9 @@ export default function Users() {
             </div>
           ))}
         </ul>
+        <button className="btn btn-xs fetch-btn" onClick={refetch}>
+          Trigger Refetch - React Query
+        </button>
       </div>
     </div>
   );
