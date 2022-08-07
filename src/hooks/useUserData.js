@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
 
 const fetchUser = async (userId) => {
   const response = await fetch(`http://localhost:4000/superheroes/${userId}`);
@@ -8,9 +8,14 @@ const fetchUser = async (userId) => {
   return response.json();
 };
 
-export const useUserData = (userId, onSuccess, onError) => {
+// https://tanstack.com/query/v4/docs/guides/initial-query-data
+export const useUserData = (userId) => {
+  const queryClient = useQueryClient();
   return useQuery(['user', userId], () => fetchUser(userId), {
-    onSuccess,
-    onError,
+    initialData: () => {
+      return queryClient
+        .getQueryData(['users'])
+        ?.find((user) => user.id === parseInt(userId));
+    },
   });
 };

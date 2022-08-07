@@ -7,7 +7,7 @@ export function User() {
 
   const { isLoading, data: user, isError, error, isFetching } = useUserData(id);
 
-  if (isLoading || isFetching) {
+  if (isLoading) {
     return <h2>Loading...</h2>;
   }
 
