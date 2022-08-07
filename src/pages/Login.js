@@ -11,9 +11,6 @@ const Login = () => {
 
   const onSubmit = ({ username, password, remember }) => {
     // You should handle login logic with username, password and remember form data
-    console.log("[DEBUG] onSubmit - username", username);
-    console.log("[DEBUG] onSubmit - password", password);
-    console.log("[DEBUG] onSubmit - remember", remember);
     setUser({ name: username });
   };
 
