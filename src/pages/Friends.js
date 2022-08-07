@@ -18,6 +18,16 @@ const fetchFriends = async () => {
 
 // Example using React-Query
 export default function Friends() {
+  const onSuccess = (data) => {
+    // Perform side effect after data fetching
+    console.log('onSuccess:', { data });
+  };
+
+  const onError = (error) => {
+    // Perform side effect after encountering error
+    console.log('onError:', { error });
+  };
+
   // Queries (["key"], func that returns a promise)
   const {
     isLoading,
@@ -26,7 +36,11 @@ export default function Friends() {
     error,
     refetch,
     isFetching,
-  } = useQuery(['friends'], fetchFriends, { staleTime: 30000 });
+  } = useQuery(['friends'], fetchFriends, {
+    staleTime: 30000,
+    onSuccess,
+    onError,
+  });
 
   if (isLoading || isFetching) {
     return <h2>Loading...</h2>;
