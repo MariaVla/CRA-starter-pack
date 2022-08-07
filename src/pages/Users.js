@@ -6,16 +6,14 @@ export default function Users() {
 
   useEffect(() => {
     console.log("useEffect");
-    async function fetchData() {
-      await fetch("https://jsonplaceholder.typicode.com/users")
-        .then((response) => response.json())
-        .then((data) => {
-          console.log("data", data);
-          setUsers(data);
-          setIsLoading(false);
-        });
-    }
-    fetchData();
+
+    fetch("http://localhost:4000/superheroes")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("data", data);
+        setUsers(data);
+        setIsLoading(false);
+      });
   }, []);
 
   if (isLoading) {
