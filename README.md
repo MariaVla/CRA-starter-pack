@@ -1,5 +1,22 @@
 # Homebanking Front
 
+CRA started pack:
+
+- React Router - routing library
+- React Query - fetching library
+- React Hook Forms - forms library
+- SCSS
+- JSON Server for API mock
+
+### TODO
+
+- Add prettier
+- Add eslint
+- Add post example with React Query
+- Add Typescript basic
+- Make login functional
+- Add i18n ?
+
 ## Dependencies
 
 - nvm -v → 0.39.1
